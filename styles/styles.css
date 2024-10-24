@@ -96,7 +96,7 @@ h2 {
     display: inline-block;
     width: 250px; /* Ajusta según el tamaño de la imagen */
     height: 250px;
-    background-image: url('../asset/fondo15.png'); /* Ruta de la imagen */
+    background-image: url('./asset/fondo15.png'); /* Ruta de la imagen */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
