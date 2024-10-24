@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación 15 Años</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <br><br>
+                <p>Estas invitado a celebrar mis </p>
+                <h2><span class="fifteen"></span></h2>
+                
+                <p class="nombre">Selene Lemos</p>
+                <p><strong class="fecha">Fecha:</strong>
+                    <br> 
+                    10 de noviembre, 20:00 hs
+                </p>
+                <div class="buttons">
+                    <a href="https://wa.me/123456789?text=¡Hola! Confirmo mi asistencia al cumpleaños de 15" target="_blank" class="btn confirm">Confirmar asistencia</a>
+                    <button class="btn location" onclick="flipCard()">Ver dirección</button>
+                </div>
+            </div>
+            
+            <div class="back">
+                <h2 class="direc">Dirección del evento</h2>
+                <br><br>
+                <p>Salón Las Mariposas</p>
+                <p>Av. Siempre viva 123 - Moreno</p>
+                <br><br><br>
+                <a href="https://maps.app.goo.gl/Wy3Esf4nuh7hYWiMA" target="_blank" class="btn map">Abrir en Google Maps</a>
+                <!-- Botón para volver a la parte frontal -->
+                 <br>
+                <button class="btn location" onclick="flipCard()">Volver</button>
+            </div>
+            
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
