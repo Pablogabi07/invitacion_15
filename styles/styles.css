@@ -7,10 +7,10 @@
 
 body {
     background-image: url(''); /* Ruta de la imagen de fondo */
-    background-size: cover; /* La imagen cubre todo el área del body */
-    background-position: center; /* Centrar la imagen */
-    background-repeat: no-repeat; /* No repetir la imagen */
-    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,16 +42,15 @@ body {
     border-radius: 40px;
     padding: 20px;
     color: white;
-}
-
-.front {
-    background-image: url('');
-    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.front {
+    background: linear-gradient(145deg, #f1ceff, #f781f7);
 }
 
 .back {
@@ -62,85 +61,98 @@ body {
     align-items: center;
     transform: rotateY(180deg);
     text-align: center;
-}
-
-.back .btn-back {
-    margin-top: 20px;
-    background-color: #f39c12;
+    border-radius: 40px;
+    padding: 20px;
     color: white;
+    position: relative; /* Necesario para que el pseudo-elemento se posicione correctamente */
+    overflow: hidden; /* Asegura que el pseudo-elemento no se salga del borde de la tarjeta */
 }
 
-.back .btn-back:hover {
-    background-color: white;
-    color: #8e44ad;
+.back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../asset/fondoback2.jpg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Ajusta este valor para cambiar la opacidad */
+    z-index: 1; /* Asegura que el pseudo-elemento esté detrás del contenido de texto */
+    border-radius: 40px;
 }
 
-.direc{
-    font-family: "Courgette", cursive;
-
-  font-style: normal;
-    font-size: 3rem;
+.back * {
+    position: relative;
+    z-index: 2; /* Coloca el contenido por encima del pseudo-elemento */
 }
+
+
 
 
 h2 {
-    font-size: 36px;
-    text-align: center;
+    font-size: 3.5rem;
     color: #ffffff;
     margin-bottom: 15px;
     font-family: "Great Vibes", cursive;
-  font-size: 6rem;
 }
 
 .fifteen {
     position: relative;
     display: inline-block;
-    width: 250px; /* Ajusta según el tamaño de la imagen */
-    height: 250px;
-    background-image: url('../asset/fondo15.png'); /* Ruta de la imagen */
+    width: 200px;
+    height: 200px;
+    background-image: url('../asset/fondo15.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: transparent; /* Hace que el número 15 sea invisible, solo la imagen se ve */
-    line-height: 80px; /* Asegura que el "15" se centre verticalmente dentro del contenedor */
-    text-align: center; /* Centra el número horizontalmente */
+    color: transparent;
+    line-height: 80px;
+    text-align: center;
 }
 
 .fifteen::after {
-    content: "15"; /* Inserta el texto "15" dentro del span */
+    content: "15";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra el texto dentro del span */
-    color: white; /* Puedes cambiar el color según el fondo de la imagen */
-    font-size: 36px;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 4rem;
     font-family: "Great Vibes", cursive;
-  font-size: 6rem;
 }
 
 p {
-    margin-bottom: 20px;
     font-family: "Great Vibes", cursive;
-  font-size: 2.2rem;
-  color: #ffffff;
-}
-
-.nombre{
-    font-size: 60px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
     
 }
 
-.fecha{
-    margin-bottom: 20px;
-    font-family: "Great Vibes", cursive;
+.nombre {
+    font-size: 3.5rem;
+    color: #8e33b6;
 }
 
+.fecha {
+    font-family: "Great Vibes", cursive;
+    font-size: 2rem;
+    color: #8e33b6;
+}
 
+.direc {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.5rem;
+    color: #8e33b6;
+    
+}
 
 .buttons {
     display: flex;
-    flex-direction: column; /* Cambiar a columna */
-    gap: 10px; /* Separación entre los botones */
+    flex-direction: column;
+    gap: 10px;
 }
 
 .btn {
@@ -150,11 +162,11 @@ p {
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Ocupar el 100% del ancho */
-    text-align: center; /* Centrar el texto */
+    width: 100%;
+    text-align: center;
 }
 
 .btn:hover {
@@ -162,11 +174,9 @@ p {
     color: white;
 }
 
-
 .map {
     background-color: white;
     color: #9b59b6;
-    
 }
 
 .map:hover {
@@ -176,4 +186,87 @@ p {
 
 .card.flipped {
     transform: rotateY(180deg);
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .card {
+        width: 320px;
+        height: 600px;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .fifteen {
+        width: 150px;
+        height: 150px;
+    }
+
+    .fifteen::after {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .nombre {
+        font-size: 2.5rem;
+    }
+
+    .fecha {
+        font-size: 1.6rem;
+    }
+
+    .direc {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 280px;
+        height: 500px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .fifteen {
+        width: 120px;
+        height: 120px;
+    }
+
+    .fifteen::after {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .nombre {
+        font-size: 2.2rem;
+    }
+
+    .fecha {
+        font-size: 1.4rem;
+    }
+
+    .direc {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
 }
